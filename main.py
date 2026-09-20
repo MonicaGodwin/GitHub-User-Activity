@@ -21,10 +21,12 @@ raw_data = response.read()
 
 data = json.loads(raw_data)
 
+data = data.decode()
+
 if not os.path.exists("file.json"):
     content = []
     with open("file.json", "w") as file:
         json.dump(content, file, indent=4)
 else:
     with open("file.json", "r") as data:
-        file_content = json.load(data)
+        file_content = json.loads(data)
