@@ -23,12 +23,12 @@ raw_data = raw_data.decode()
 
 converted_data = json.loads(raw_data)
 
-print(converted_data)
-
-if not os.path.exists("file.json"):
-    content = []
-    with open("file.json", "w") as file:
-        json.dump(content, file, indent=4)
-else:
-    with open("file.json", "r") as data:
-        file_content = json.loads(data)
+for converted in converted_data:
+    print(f"{converted['id']} {converted['type']} {converted['repo']}")
+# if not os.path.exists("file.json"):
+#     content = []
+#     with open("file.json", "w") as file:
+#         json.dump(content, file, indent=4)
+# else:
+#     with open("file.json", "r") as data:
+#         file_content = json.loads(data)
