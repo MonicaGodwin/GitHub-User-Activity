@@ -34,5 +34,8 @@ else:
 
 for converted in converted_data:
     content = f"{converted['id']} - {converted['repo']['name']}"
-    with open("file.json", "w") as data_file:
-        json.dump(content, data_file, indent=4)
+    # content_file.append(content)
+    print(content)
+
+# with open("file.json", "w") as data_file:
+#     json.dump(content_file, data_file, indent=4)
