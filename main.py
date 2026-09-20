@@ -19,9 +19,11 @@ response = urlopen(url)
 
 raw_data = response.read()
 
-data = json.loads(raw_data)
+raw_data = raw_data.decode()
 
-data = data.decode()
+converted_data = json.loads(raw_data)
+
+print(converted_data)
 
 if not os.path.exists("file.json"):
     content = []
