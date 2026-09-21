@@ -32,10 +32,10 @@ else:
     with open("file.json", "r") as data:
         file_content = json.load(data)
 
-for converted in converted_data:
-    content = f"{converted['id']} - {converted['repo']['name']}"
-    # content_file.append(content)
-    print(content)
 
-# with open("file.json", "w") as data_file:
-#     json.dump(content_file, data_file, indent=4)
+for converted in converted_data:
+    content = f"{converted['type']} - {converted['repo']['name']} - {converted['created_at']}"
+    content_file.append(content)
+
+with open("file.json", "w") as data_file:
+    json.dump(content_file, data_file, indent=4)
