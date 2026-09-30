@@ -1,6 +1,6 @@
 import sys
 from urllib.request import urlopen
-from urllib.request import HTTPError
+from urllib.request import HTTPError, URLError
 import json
 import os
 from helper_function import event_type
@@ -19,7 +19,10 @@ url = f"https://api.github.com/users/{user_input}/events"
 try:
     response = urlopen(url)
 except HTTPError as e:
-    print(e.code)
+    print(f"HTTP error {e.code}: {e.reason}")
+    sys.exit()
+except URLError as e:
+    print(f"Request failed: {e.reason}")
     sys.exit()
 
 raw_data = response.read()
@@ -30,6 +33,7 @@ try:
     converted_data = json.loads(raw_data)
 except json.JSONDecodeError:
   print("The JSON file is empty or formatted incorrectly.")
+  sys.exit()
 
 content_file = []   
 if not os.path.exists("file.json"):        
