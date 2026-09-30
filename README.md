@@ -76,6 +76,7 @@ The CLI converts GitHub event types into human-readable descriptions, including:
 github-user-activity/
 │
 ├── file.json
+├── helper_function.py
 ├── main.py
 └── README.md
 ```
