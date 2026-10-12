@@ -28,6 +28,7 @@ except URLError as e:
 raw_data = response.read()
 
 raw_data = raw_data.decode()
+print(raw_data)
 
 try:
     converted_data = json.loads(raw_data)

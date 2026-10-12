@@ -29,12 +29,6 @@ Run the program using:
 python3 main.py <github_username>
 ```
 
-For example:
-
-```bash
-python3 main.py piusjohn
-```
-
 The program fetches the user's recent GitHub activity and displays information such as:
 
 * Event type
